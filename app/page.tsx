@@ -96,7 +96,7 @@ export default function Portfolio() {
       <nav className="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-md z-50 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <div className="font-bold text-2xl text-blue-600">Portfolio</div>
+            <div className="font-bold text-2xl text-blue-600">Fita's Portfolio</div>
             <div className="hidden md:flex space-x-8">
               {['Home', 'About', 'Projects', 'Skills', 'Contact'].map((item) => (
                 <button
@@ -186,20 +186,24 @@ export default function Portfolio() {
               </div>
             </div>
             
-            <div className="relative">
-              <div className="relative z-10">
-                <div className="w-80 h-80 mx-auto rounded-full bg-gradient-to-br from-blue-400 to-purple-600 p-2">
-                  <div className="w-full h-full rounded-full bg-gray-200 flex items-center justify-center">
-                    <div className="text-6xl">👨‍💻</div>
-                  </div>
-                </div>
-                <div className="absolute -bottom-4 -right-4 bg-blue-600 text-white px-6 py-2 rounded-full font-semibold text-sm">
-                  UI/UX Designer | Frontend Developer
-                </div>
+            <div className="relative z-10">
+              <div className="w-80 h-80 mx-auto rounded-full bg-gradient-to-br from-blue-400 to-purple-600 p-2">
+              <div className="w-full h-full rounded-full bg-gray-200 flex items-center justify-center overflow-hidden">
+              {/* Ganti src dengan file foto kamu, misal public/profile.jpg */}
+                <img 
+                  src="/Profile2.jpg" // letakkan file 'profile.jpg' di folder 'public'
+                  alt="Profile"
+                  className="w-full h-full object-cover rounded-full"
+                />
               </div>
-              <div className="absolute top-10 right-10 w-20 h-20 bg-blue-500 rounded-full opacity-20 animate-pulse"></div>
+            </div>
+            <div className="absolute -bottom-4 -right-4 bg-blue-600 text-white px-6 py-2 rounded-full font-semibold text-sm">
+              UI/UX Designer | Frontend Developer
             </div>
           </div>
+          <div className="absolute top-10 right-10 w-20 h-20 bg-blue-500 rounded-full opacity-20 animate-pulse"></div>
+
+                    </div>
         </div>
       </section>
 
