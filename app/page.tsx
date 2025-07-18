@@ -1,5 +1,6 @@
 'use client';
 
+import { title } from 'node:process';
 import React, { useState, useEffect } from 'react';
 
 export default function Portfolio() {
@@ -34,35 +35,45 @@ export default function Portfolio() {
   }, [skillsVisible]);
 
   const skills = [
-    { name: 'UI/UX Design', percentage: 95 },
-    { name: 'React/Next.js', percentage: 90 },
-    { name: 'Figma/Adobe XD', percentage: 88 },
-    { name: 'TypeScript', percentage: 85 },
+    { name: 'Figma', percentage: 80 },
+    { name: 'JavaScript', percentage: 70 },
+    { name: 'PHP', percentage: 83 },
     { name: 'Tailwind CSS', percentage: 92 }
   ];
 
   const projects = [
     {
-      title: 'E-Commerce Dashboard',
-      description: 'Modern admin dashboard with advanced analytics and user management',
+      title: 'Bioskop Website',
+      description: 'Modern web admin & user dashboard with advanced analytics and user management',
       type: 'Web App',
       typeColor: 'bg-blue-100 text-blue-600',
       icon: '📊',
       bgColor: 'from-blue-100 to-purple-100',
       iconColor: 'text-blue-600',
-      tags: ['React', 'TypeScript', 'Tailwind']
+      tags: ['PHP', 'JavaScript', 'Tailwind']
     },
     {
-      title: 'Banking Mobile App',
-      description: 'Intuitive mobile banking interface with seamless UX flow',
+      title: 'App Health Tracker',
+      description: 'Mobile app design that track their daily wellness, activities, and vital stats on the go.',
       type: 'Mobile Design',
       typeColor: 'bg-green-100 text-green-600',
       icon: '📱',
       bgColor: 'from-green-100 to-teal-100',
       iconColor: 'text-green-600',
-      tags: ['Figma', 'Prototyping', 'User Testing', 'iOS']
+      tags: ['Figma', 'Prototyping', 'iOS']
+    },
+    {
+      title: 'Bioskop mobile Design',
+      description: 'Mobile app design for booking tickets.',
+      type: 'Mobile Design',
+      typeColor: 'bg-green-100 text-green-600',
+      icon: '📱',
+      bgColor: 'from-green-100 to-teal-100',
+      iconColor: 'text-green-600',
+      tags: ['Figma', 'Prototyping', 'Cinema']
     }
   ];
+
 
   const skillCategories = [
     {
@@ -75,7 +86,7 @@ export default function Portfolio() {
       title: 'Frontend Development',
       icon: '💻',
       description: 'Building responsive and performant web applications with modern technologies',
-      skills: ['React/Next.js', 'TypeScript', 'Tailwind CSS', 'API Integration']
+      skills: ['JavaScript', 'PHP', 'Tailwind CSS']
     }
   ];
 
@@ -136,7 +147,7 @@ export default function Portfolio() {
               <div>
                 <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mb-6">
                   Hello, I'm<br />
-                  <span className="text-blue-600">Alex Chen</span>
+                  <span className="text-blue-600">Fithrotul Muhclisiyah</span>
                 </h1>
                 <p className="text-xl text-gray-600 mb-8 leading-relaxed">
                   Creating beautiful digital experiences that users love through thoughtful design and clean code
@@ -198,7 +209,7 @@ export default function Portfolio() {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-800 mb-4">About Me</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              With 5+ years of experience in design and development, I bridge the gap between creativity and functionality
+              With 1 year of experience in design and development, I bridge the gap between creativity and functionality
             </p>
           </div>
           
@@ -206,10 +217,10 @@ export default function Portfolio() {
             <div>
               <h3 className="text-2xl font-bold text-blue-600 mb-6">My Journey</h3>
               <p className="text-gray-600 mb-6 leading-relaxed">
-                I started as a graphic designer and evolved into a full-stack creative professional. My passion lies in creating user-centered designs that not only look amazing but also solve real problems and deliver exceptional user experiences.
+                I am a passionate UI/UX Designer dedicated to creating intuitive, user-centered digital experiences. With a keen eye for detail and a love for solving problems through design, I strive to blend aesthetics and functionality to deliver products that are both beautiful and easy to use.
               </p>
               <p className="text-gray-600 leading-relaxed">
-                I specialize in modern web technologies and design tools, constantly staying updated with the latest trends and best practices in UI/UX design and frontend development.
+                I am a beginner Frontend Developer eager to learn and grow in building modern, responsive web applications. I enjoy turning creative ideas into real websites and am passionate about improving my coding skills every day.
               </p>
             </div>
             
@@ -237,7 +248,7 @@ export default function Portfolio() {
       <section id="projects" className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">Featured Projects</h2>
+            <h2 className="text-4xl font-bold text-gray-800 mb-4">My Recent Projects</h2>
             <p className="text-xl text-gray-600">A showcase of my recent work across different industries and platforms</p>
           </div>
           
@@ -303,7 +314,7 @@ export default function Portfolio() {
       <section id="contact" className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">Let's Work Together</h2>
+            <h2 className="text-4xl font-bold text-gray-800 mb-4">Contact Me</h2>
             <p className="text-xl text-gray-600">Ready to start your next project? Let's discuss how I can help bring your vision to life</p>
           </div>
           
@@ -313,9 +324,9 @@ export default function Portfolio() {
               
               <div className="space-y-6">
                 {[
-                  { icon: '📧', label: 'Email', value: 'alex.chen@example.com' },
-                  { icon: '📞', label: 'Phone', value: '+1 (555) 123-4567' },
-                  { icon: '📍', label: 'Location', value: 'San Francisco, CA' }
+                  { icon: '📧', label: 'Email', value: 'fithrotulmuhclisiyah25@gmail.com' },
+                  { icon: '📞', label: 'Phone', value: '+62 8122-8548-346' },
+                  { icon: '📍', label: 'Location', value: 'Malang, Jawa Timur' }
                 ].map((contact, index) => (
                   <div key={index} className="flex items-center">
                     <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
@@ -373,7 +384,7 @@ export default function Portfolio() {
       <footer className="bg-gray-800 text-white py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <p>&copy; 2024 Alex Chen. All rights reserved.</p>
+            <p>&copy; 2025 Fithrotul Muhclisiyah. All rights reserved.</p>
           </div>
         </div>
       </footer>
