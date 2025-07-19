@@ -253,44 +253,45 @@ export default function Portfolio() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {projects.map((project, index) => (
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                key={index}
-                className="block bg-white rounded-xl shadow-lg overflow-hidden hover:transform hover:scale-105 transition-all duration-300"
-              >
-                <div className={`h-64 bg-gradient-to-br ${project.bgColor} flex items-center justify-center`}>
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    fill
-                    className="object-cover w-full h-full"
-                    sizes='(max-width: 768px) 100vw, 50vw'
-                  />
-                </div>
-                <div className="p-6">
-                  <div className="flex justify-between items-start mb-4">
-                    <h3 className="text-xl font-bold text-gray-800">{project.title}</h3>
-                    <span className={`${project.typeColor} px-3 py-1 rounded-full text-sm font-semibold`}>
-                      {project.type}
-                    </span>
-                  </div>
-                  <p className="text-gray-600 mb-4">{project.description}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.map((tag, tagIndex) => (
-                      <span key={tagIndex} className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </a>
-            ))}
-          </div>
+  {projects.map((project, index) => (
+    <a
+      href={project.link}
+      target="_blank"
+      rel="noopener noreferrer"
+      key={index}
+      className="block bg-white rounded-xl shadow-lg overflow-hidden hover:transform hover:scale-105 transition-all duration-300"
+    >
+      <div className={`h-64 bg-gradient-to-br ${project.bgColor} relative`}>
+        <Image
+          src={project.image}
+          alt={project.title}
+          fill
+          className="object-cover w-full h-full"
+          style={{ zIndex: 1 }}
+        />
+        {/* Overlay agar gradasi tetap terlihat */}
+        <div className="absolute inset-0 bg-gradient-to-br from-white/60 to-white/0" style={{ zIndex: 2 }} />
+      </div>
+      <div className="p-6">
+        <div className="flex justify-between items-start mb-4">
+          <h3 className="text-xl font-bold text-gray-800">{project.title}</h3>
+          <span className={`${project.typeColor} px-3 py-1 rounded-full text-sm font-semibold`}>
+            {project.type}
+          </span>
         </div>
-      </section>
+        <p className="text-gray-600 mb-4">{project.description}</p>
+        <div className="flex flex-wrap gap-2">
+          {project.tags.map((tag, tagIndex) => (
+            <span key={tagIndex} className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">
+              {tag}
+            </span>
+          ))}
+        </div>
+      </div>
+    </a>
+  ))}
+</div>
+
 
       {/* Skills Section */}
       <section id="skills" className="py-20 bg-white">
