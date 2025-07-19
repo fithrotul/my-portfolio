@@ -1,7 +1,7 @@
 'use client';
 
-import { title } from 'node:process';
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 
 export default function Portfolio() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -23,13 +23,11 @@ export default function Portfolio() {
       if (skillsSection) {
         const rect = skillsSection.getBoundingClientRect();
         const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
-        
         if (isVisible && !skillsVisible) {
           setSkillsVisible(true);
         }
       }
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, [skillsVisible]);
@@ -47,19 +45,19 @@ export default function Portfolio() {
       description: 'Modern web admin & user dashboard with advanced analytics and user management',
       type: 'Web App',
       typeColor: 'bg-blue-100 text-blue-600',
-      icon: '📊',
+      image: '/projects/bioskop-web.png',
+      // link: 'https://github.com/username/bioskop-web',
       bgColor: 'from-blue-100 to-purple-100',
-      iconColor: 'text-blue-600',
       tags: ['PHP', 'JavaScript', 'Tailwind']
     },
     {
-      title: 'App Health Tracker',
-      description: 'Mobile app design that track their daily wellness, activities, and vital stats on the go.',
+      title: 'App Health Tracker Design',
+      description: 'Mobile app design that tracks daily wellness, activities, and vital stats on the go.',
       type: 'Mobile Design',
       typeColor: 'bg-green-100 text-green-600',
-      icon: '📱',
+      image: '/HealthTracker.png',
+      link: 'https://www.figma.com/design/x9guWHzDbjZxdcApHQgv92/IMK-UAS?node-id=0-1&p=f&t=R5NM3sSP4V2vm6q1-0',
       bgColor: 'from-green-100 to-teal-100',
-      iconColor: 'text-green-600',
       tags: ['Figma', 'Prototyping', 'iOS']
     },
     {
@@ -67,13 +65,12 @@ export default function Portfolio() {
       description: 'Mobile app design for booking tickets.',
       type: 'Mobile Design',
       typeColor: 'bg-green-100 text-green-600',
-      icon: '📱',
+      image: '/bioskop.png',
+      link: 'https://www.figma.com/design/LMfU9Hqa8O33SwQDXYEBcp/web-uts---uas-integrasi?node-id=0-1&p=f&t=RtcLI3R4LFq2XUzc-0',
       bgColor: 'from-green-100 to-teal-100',
-      iconColor: 'text-green-600',
       tags: ['Figma', 'Prototyping', 'Cinema']
     }
   ];
-
 
   const skillCategories = [
     {
@@ -120,7 +117,6 @@ export default function Portfolio() {
             </div>
           </div>
         </div>
-        
         {/* Mobile Menu */}
         {mobileMenuOpen && (
           <div className="md:hidden bg-white border-t">
@@ -153,7 +149,7 @@ export default function Portfolio() {
                   Creating beautiful digital experiences that users love through thoughtful design and clean code
                 </p>
               </div>
-              
+
               <div className="flex flex-col sm:flex-row gap-4">
                 <button
                   onClick={() => scrollToSection('projects')}
@@ -168,7 +164,7 @@ export default function Portfolio() {
                   Download CV
                 </button>
               </div>
-              
+
               <div className="flex space-x-4">
                 {[
                   { icon: '💻', href: '#' },
@@ -185,25 +181,25 @@ export default function Portfolio() {
                 ))}
               </div>
             </div>
-            
+
             <div className="relative z-10">
               <div className="w-80 h-80 mx-auto rounded-full bg-gradient-to-br from-blue-400 to-purple-600 p-2">
-              <div className="w-full h-full rounded-full bg-gray-200 flex items-center justify-center overflow-hidden">
-              {/* Ganti src dengan file foto kamu, misal public/profile.jpg */}
-                <img 
-                  src="/Profile2.jpg" // letakkan file 'profile.jpg' di folder 'public'
-                  alt="Profile"
-                  className="w-full h-full object-cover rounded-full"
-                />
+                <div className="w-full h-full rounded-full bg-gray-200 flex items-center justify-center overflow-hidden">
+                  <Image
+                    src="/Profile2.jpg"
+                    alt="Profile"
+                    width={320}
+                    height={320}
+                    className="w-full h-full object-cover rounded-full"
+                  />
+                </div>
               </div>
-            </div>
-            <div className="absolute -bottom-4 -right-4 bg-blue-600 text-white px-6 py-2 rounded-full font-semibold text-sm">
-              UI/UX Designer | Frontend Developer
+              <div className="absolute -bottom-4 -right-4 bg-blue-600 text-white px-6 py-2 rounded-full font-semibold text-sm">
+                UI/UX Designer | Frontend Developer
+              </div>
+              <div className="absolute top-10 right-10 w-20 h-20 bg-blue-500 rounded-full opacity-20 animate-pulse"></div>
             </div>
           </div>
-          <div className="absolute top-10 right-10 w-20 h-20 bg-blue-500 rounded-full opacity-20 animate-pulse"></div>
-
-                    </div>
         </div>
       </section>
 
@@ -216,7 +212,7 @@ export default function Portfolio() {
               With 1 year of experience in design and development, I bridge the gap between creativity and functionality
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h3 className="text-2xl font-bold text-blue-600 mb-6">My Journey</h3>
@@ -227,7 +223,7 @@ export default function Portfolio() {
                 I am a beginner Frontend Developer eager to learn and grow in building modern, responsive web applications. I enjoy turning creative ideas into real websites and am passionate about improving my coding skills every day.
               </p>
             </div>
-            
+
             <div className="space-y-6">
               {skills.map((skill, index) => (
                 <div key={index} className="skill-item">
@@ -236,7 +232,7 @@ export default function Portfolio() {
                     <span className="text-blue-600 font-semibold">{skill.percentage}%</span>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-3">
-                    <div 
+                    <div
                       className="bg-gradient-to-r from-blue-500 to-blue-600 h-3 rounded-full transition-all duration-2000 ease-out"
                       style={{ width: skillsVisible ? `${skill.percentage}%` : '0%' }}
                     ></div>
@@ -255,12 +251,24 @@ export default function Portfolio() {
             <h2 className="text-4xl font-bold text-gray-800 mb-4">My Recent Projects</h2>
             <p className="text-xl text-gray-600">A showcase of my recent work across different industries and platforms</p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {projects.map((project, index) => (
-              <div key={index} className="bg-white rounded-xl shadow-lg overflow-hidden hover:transform hover:scale-105 transition-all duration-300">
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                key={index}
+                className="block bg-white rounded-xl shadow-lg overflow-hidden hover:transform hover:scale-105 transition-all duration-300"
+              >
                 <div className={`h-64 bg-gradient-to-br ${project.bgColor} flex items-center justify-center`}>
-                  <div className="text-6xl">{project.icon}</div>
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    width={96}
+                    height={96}
+                    className="w-24 h-24 object-contain"
+                  />
                 </div>
                 <div className="p-6">
                   <div className="flex justify-between items-start mb-4">
@@ -278,7 +286,7 @@ export default function Portfolio() {
                     ))}
                   </div>
                 </div>
-              </div>
+              </a>
             ))}
           </div>
         </div>
@@ -291,7 +299,7 @@ export default function Portfolio() {
             <h2 className="text-4xl font-bold text-gray-800 mb-4">Skills</h2>
             <p className="text-xl text-gray-600">Comprehensive design and development skills to bring your ideas to life</p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {skillCategories.map((category, index) => (
               <div key={index} className="bg-gray-50 rounded-xl p-8 text-center hover:transform hover:scale-105 transition-all duration-300">
@@ -321,11 +329,10 @@ export default function Portfolio() {
             <h2 className="text-4xl font-bold text-gray-800 mb-4">Contact Me</h2>
             <p className="text-xl text-gray-600">Ready to start your next project? Let's discuss how I can help bring your vision to life</p>
           </div>
-          
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div>
               <h3 className="text-2xl font-bold text-blue-600 mb-8">Get In Touch</h3>
-              
               <div className="space-y-6">
                 {[
                   { icon: '📧', label: 'Email', value: 'fithrotulmuhclisiyah25@gmail.com' },
@@ -344,11 +351,11 @@ export default function Portfolio() {
                 ))}
               </div>
             </div>
-            
+
             <div className="bg-white rounded-xl shadow-lg p-8">
               <h3 className="text-xl font-bold text-gray-800 mb-2">Send Message</h3>
               <p className="text-gray-600 mb-6">I'll get back to you within 24 hours</p>
-              
+
               <div className="space-y-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <input
