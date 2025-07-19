@@ -265,9 +265,9 @@ export default function Portfolio() {
                   <Image
                     src={project.image}
                     alt={project.title}
-                    width={96}
-                    height={96}
-                    className="w-24 h-24 object-contain"
+                    fill
+                    className="object-cover w-full h-full"
+                    sizes='(max-width: 768px) 100vw, 50vw'
                   />
                 </div>
                 <div className="p-6">
