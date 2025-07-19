@@ -253,45 +253,48 @@ export default function Portfolio() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-  {projects.map((project, index) => (
-    <a
-      href={project.link}
-      target="_blank"
-      rel="noopener noreferrer"
-      key={index}
-      className="block bg-white rounded-xl shadow-lg overflow-hidden hover:transform hover:scale-105 transition-all duration-300"
-    >
-      <div className={`h-64 bg-gradient-to-br ${project.bgColor} relative`}>
-        <Image
-          src={project.image}
-          alt={project.title}
-          fill
-          className="object-cover w-full h-full"
-          style={{ zIndex: 1 }}
-        />
-        {/* Overlay agar gradasi tetap terlihat */}
-        <div className="absolute inset-0 bg-gradient-to-br from-white/60 to-white/0" style={{ zIndex: 2 }} />
-      </div>
-      <div className="p-6">
-        <div className="flex justify-between items-start mb-4">
-          <h3 className="text-xl font-bold text-gray-800">{project.title}</h3>
-          <span className={`${project.typeColor} px-3 py-1 rounded-full text-sm font-semibold`}>
-            {project.type}
-          </span>
+            {projects.map((project, index) => (
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                key={index}
+                className="block bg-white rounded-xl shadow-lg overflow-hidden hover:transform hover:scale-105 transition-all duration-300"
+              >
+                {/* Gambar memenuhi area hijau */}
+                <div className={`h-64 bg-gradient-to-br ${project.bgColor} relative`}>
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover w-full h-full"
+                    style={{ zIndex: 1 }}
+                  />
+                  {/* Overlay agar gradasi tetap terlihat */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/60 to-white/0" style={{ zIndex: 2 }} />
+                </div>
+                <div className="p-6">
+                  <div className="flex justify-between items-start mb-4">
+                    <h3 className="text-xl font-bold text-gray-800">{project.title}</h3>
+                    <span className={`${project.typeColor} px-3 py-1 rounded-full text-sm font-semibold`}>
+                      {project.type}
+                    </span>
+                  </div>
+                  <p className="text-gray-600 mb-4">{project.description}</p>
+                  <div className="flex flex-wrap gap-2">
+                    {project.tags.map((tag, tagIndex) => (
+                      <span key={tagIndex} className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
         </div>
-        <p className="text-gray-600 mb-4">{project.description}</p>
-        <div className="flex flex-wrap gap-2">
-          {project.tags.map((tag, tagIndex) => (
-            <span key={tagIndex} className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">
-              {tag}
-            </span>
-          ))}
-        </div>
-      </div>
-    </a>
-  ))}
-</div>
-
+      </section>
+      {/* <<< PENUTUP SECTION PROJECTS HARUS ADA DI SINI */}
 
       {/* Skills Section */}
       <section id="skills" className="py-20 bg-white">
@@ -300,7 +303,6 @@ export default function Portfolio() {
             <h2 className="text-4xl font-bold text-gray-800 mb-4">Skills</h2>
             <p className="text-xl text-gray-600">Comprehensive design and development skills to bring your ideas to life</p>
           </div>
-
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {skillCategories.map((category, index) => (
               <div key={index} className="bg-gray-50 rounded-xl p-8 text-center hover:transform hover:scale-105 transition-all duration-300">
@@ -330,7 +332,6 @@ export default function Portfolio() {
             <h2 className="text-4xl font-bold text-gray-800 mb-4">Contact Me</h2>
             <p className="text-xl text-gray-600">Ready to start your next project? Let's discuss how I can help bring your vision to life</p>
           </div>
-
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div>
               <h3 className="text-2xl font-bold text-blue-600 mb-8">Get In Touch</h3>
@@ -352,11 +353,9 @@ export default function Portfolio() {
                 ))}
               </div>
             </div>
-
             <div className="bg-white rounded-xl shadow-lg p-8">
               <h3 className="text-xl font-bold text-gray-800 mb-2">Send Message</h3>
               <p className="text-gray-600 mb-6">I'll get back to you within 24 hours</p>
-
               <div className="space-y-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <input
